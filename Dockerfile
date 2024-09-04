@@ -157,8 +157,8 @@ ENV GRADLE_HOME=/opt/gradle/gradle-8.7/bin
 # install selenium + chrome
 #RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #RUN apt install ./google-chrome-stable_current_amd64.deb
-RUN python3 -m pip install --upgrade pip
-RUN pip install selenium
+#RUN python3 -m pip install --upgrade pip
+#RUN pip install selenium
 
 
 # add ccache to PATH
