@@ -25,6 +25,13 @@ RUN apt-get install -y lib32stdc++6 lib32gcc-s1 lib32z1 unzip openssh-client ssh
 RUN apt-get install -y libgnutls28-dev adb 
 RUN apt-get install -y python3-pip
 
+# Install wget, sudo, and .NET SDK 8.0
+RUN apt-get install -y wget  && \
+    wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
+    dpkg -i packages-microsoft-prod.deb && \
+    rm packages-microsoft-prod.deb && \
+    apt-get update && \
+    apt-get install -y dotnet-sdk-8.0
 
 
 # ------------------------------------------------------
