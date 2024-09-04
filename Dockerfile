@@ -21,7 +21,7 @@ RUN apt-get install -y maven default-jdk binutils-i686-linux-gnu
 
 # Additional tools
 RUN apt-get install -y libboost-all-dev bzip2 curl git-core html2text libc6-i386 libc6-dev-i386
-RUN apt-get install -y lib32stdc++6 lib32gcc1 lib32z1 unzip openssh-client sshpass lftp 
+RUN apt-get install -y lib32stdc++6 lib32gcc-s1 lib32z1 unzip openssh-client sshpass lftp 
 RUN apt-get install -y libgnutls28-dev adb 
 RUN apt-get install -y python3-pip
 
