@@ -1,9 +1,9 @@
-FROM debian:bookworm
+FROM debian:bookworm-slim
 
 RUN apt-get update && apt-get install -y build-essential
-RUN apt-get install -y devscripts cmake debhelper
+RUN apt-get install -y devscripts cmake gcc g++ debhelper 
 RUN apt-get install -y dh-exec pkg-config libboost-dev libboost-filesystem-dev 
-RUN apt-get install -y libasound2-dev libgles2-mesa-dev 
+RUN apt-get install -y libasound2-dev libgles2-mesa-dev
 RUN apt-get install -y gcc-multilib g++-multilib
 RUN apt-get install -y libtool autoconf
 RUN apt-get install -y git joe ccache rsync
@@ -13,14 +13,10 @@ RUN apt-get install -y qt6-base-dev
 RUN apt-get install -y zlib1g-dev zip unzip
 RUN apt-get install -y libxext-dev libz3-dev
 
-# Install wget, sudo, and .NET SDK 8.0
-RUN apt-get install -y wget  && \
-    wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
-    dpkg -i packages-microsoft-prod.deb && \
-    rm packages-microsoft-prod.deb && \
-    apt-get update && \
-    apt-get install -y dotnet-sdk-8.0
-
-# add ccache to PATH
-ENV PATH /usr/lib/ccache:${PATH}
+#RUN apt-get install -y libboost-all-dev bzip2 curl git-core html2text libc6-i386 libc6-dev-i386
+#RUN apt-get install -y lib32stdc++6 lib32gcc1 lib32z1 unzip openssh-client sshpass lftp 
+#RUN apt-get install -y doxygen doxygen-latex graphviz wget ccache rsync joe 
+#RUN apt-get install -y maven default-jdk binutils-i686-linux-gnu 
+#RUN apt-get install -y libgnutls28-dev adb 
+#RUN apt-get install -y python3-pip
 
